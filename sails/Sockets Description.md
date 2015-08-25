@@ -1,7 +1,7 @@
-# An Article about basic [Sails.js](http://sailsjs.org) Socket system
+# An Article about [Sails.js](http://sailsjs.org) Socket system
 
 ## Introduction
-Sails.js is a good framework and it has good Socket.io implementation out of the box. Awesome !
+Sails.js is a good framework and has Socket.io implementation out of the box. Awesome !
 
 But when you read several articles about Socket.io + Express.js, tested something and install new Sails.js application. You realize that you don't understand anything. 
 
@@ -13,12 +13,13 @@ Let I try to explain.
 
 ## Socket.io in Sails.js
 Actually Sails.js has a bit different Socket system that you expects. 
-No... Of course it has all Socket.io functions and this functions works good.
+No... Of course it has all Socket.io functions and this functions works good. And Sails.js uses Socket.io.
 **But!**
-Normally you creates events listeners on server and on client code. And send events between them. In Sails.js your event listeners are your Controller actions.
+Normally you creates events listeners on server and on client code. And send events (using `emit` etc.) between them. In Sails.js your event listeners are your Controller actions.
 
-So if you will create a new controller `MessageController.js` with action `list` - it will became accessible via Socket (and HTTP also).
+So if you will create a new controller `MessageController.js` with action `list` - it will became accessible via Socket (and HTTP of course).
 
+Example: 
 `MessageController.js`: 
 
 ```javascript
